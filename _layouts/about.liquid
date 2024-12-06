@@ -15,8 +15,10 @@ layout: default
   </header>
 
   <article>
+  <div class="row justify-content-sm-center">
+  <div class="col-sm-4 mt-3 mt-md-0">
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <div class="profile" style="width: 100%;">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
@@ -32,29 +34,67 @@ layout: default
             cache_bust=true
           %}
         {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+
       </div>
     {% endif %}
+    </div>
+<div class="col-sm-8 mt-3 mt-md-0">
+    <div class="clearfix" style="text-indent: 2em; width:100%">{{ content }}</div>
+    <!-- {% if page.profile.more_info %}
+              <div class="more-info">{{ page.profile.more_info }}</div>
+            {% endif %} -->
 
-    <div class="clearfix">{{ content }}</div>
+            <hr style="border: none; border-top: 2px solid rgba(0, 0, 0, 0); width: 80%; margin: 10px auto;">
+        <!-- Social -->
+        {% if page.social %}
+          <div class="social">
+            <div class="contact-icons">{% include social.liquid %}</div>
+
+            <div class="contact-note">{{ site.contact_note }}</div>
+          </div>
+        {% endif %}
+</div>
+</div>
+
+<hr>
+
+<div class="row" style="margin-bottom:2rem">
+<div class="col-sm-6 mt-6 mt-md-6">
+
+</div>
+<div class="col-sm-6 mt-6 mt-md-6"">
+<h2 style=margin-bottom:1rem> GitHub Stats </h2>
+  <a href="https://github.com/Evan-PC-Chiang" style="width: 100%;">
+    <img
+      class="repo-img-dark"
+      style="width: 100%; height: auto; background-color: $--global-bg-color;"
+      alt="Evan-PC-Chiang"
+      src="https://github-readme-stats.vercel.app/api/?username=Evan-PC-Chiang&theme=darcula&show_icons=true\&rank_icon=github"
+    >
+  </a>
+
+</div>
+</div>
+<hr">
 
     <!-- News -->
     {% if page.news and site.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
 
+<hr>
+
     <!-- Latest posts -->
     {% if site.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
+
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
@@ -64,14 +104,6 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
 
     {% if site.newsletter.enabled and site.footer_fixed %}
       {% include scripts/newsletter.liquid center=true %}

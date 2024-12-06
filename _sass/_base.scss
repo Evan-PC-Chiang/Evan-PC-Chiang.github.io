@@ -4,6 +4,10 @@
 
 // Typography
 
+body {
+  font-family: 'Helvetica', sans-serif;
+}
+
 p,
 h1,
 h2,
@@ -14,9 +18,12 @@ h6,
 em,
 div,
 li,
-span,
-strong {
+span {
   color: var(--global-text-color);
+}
+
+strong {
+  color: var(--global-theme-color);
 }
 
 hr {
@@ -383,7 +390,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
 
     a {
       i::before {
@@ -472,6 +479,7 @@ footer.sticky-bottom {
 .cv {
   margin-bottom: 40px;
 
+
   .card {
     background-color: var(--global-card-bg-color);
     border: 1px solid var(--global-divider-color);
@@ -480,9 +488,22 @@ footer.sticky-bottom {
       background-color: inherit;
       border-color: var(--global-divider-color);
 
+
+      .div{
+        padding-left: 1em;
+      }
+
       .badge {
         color: var(--global-card-bg-color) !important;
         background-color: var(--global-theme-color) !important;
+      }
+
+      .tbody {
+        margin-left: 1rem;
+
+        .td{
+          padding-left: 1rem;
+        }
       }
     }
   }
@@ -544,6 +565,8 @@ footer.sticky-bottom {
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
+  font-family: "Roboto Slab", "Times New Roman", serif;
+  font-weight: bold;
 }
 
 .post-list {

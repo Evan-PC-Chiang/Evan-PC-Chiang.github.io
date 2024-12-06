@@ -32,6 +32,18 @@ $grey-900: #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
+// self-pallet
+$self-pallet-1: #F6F8F7;
+$self-pallet-2: #838D84;
+$self-pallet-3: #6D7770;
+$self-pallet-4: #7F8981;
+$self-pallet-5: #2B352D;
+$self-pallet-6: #EF8E14;
+
+$self-pallet-1-lighten: lighten($self-pallet-1, 20%);
+$self-pallet-2-darken: darken($self-pallet-2, 38%);
+$self-pallet-2-darken-v2: darken($self-pallet-2, 40%);
+$self-pallet-6-lighten: lighten($self-pallet-6, 20%);
 // Theme colors
 
 $code-bg-color-light: rgba($purple-color, 0.05);

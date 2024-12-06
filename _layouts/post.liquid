@@ -61,6 +61,8 @@ layout: default
     </p>
   </header>
 
+  <hr>
+
   <article class="post-content">
     {% if page.toc and page.toc.beginning %}
       <div id="table-of-contents">
@@ -72,6 +74,7 @@ layout: default
       {{ content }}
     </div>
   </article>
+
 
   {% if page.citation %}
     {% include citation.liquid %}
@@ -94,6 +97,7 @@ layout: default
     {% include disqus.liquid %}
   {% endif %}
   {% if site.giscus and page.giscus_comments %}
+    <hr>
     {% include giscus.liquid %}
   {% endif %}
 </div>

@@ -49,7 +49,7 @@
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
+              <b>{{- about_title }}</b>
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
@@ -67,7 +67,7 @@
                     {% assign has_active_child = true %}
                   {% endif %}
                 {% endfor %}
-                <li class="nav-item dropdown {% if page.title == p.title or has_active_child %}active{% endif %}">
+                <li class="nav-item dropdown {% if page.title == p.title or has_active_child %}active{% endif %}" style="color:#F6F8F7">
                   <a
                     class="nav-link dropdown-toggle"
                     href="#"
@@ -98,7 +98,7 @@
                 {% assign parent_link = p.permalink | remove: 'index.html' %}
                 <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
                   {% if p.permalink contains '/blog/' %}{% assign url = '/blog/' %} {% else %}{% assign url = p.url %}{% endif %}
-                  <a class="nav-link" href="{{ url | relative_url }}">
+                  <a class="nav-link" href="{{ url | relative_url }}" style="color:#F6F8F7">
                     {{- p.title }}
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>
@@ -113,16 +113,6 @@
             <li class="nav-item">
               <button id="search-toggle" title="Search" onclick="openSearchModal()">
                 <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
-              </button>
-            </li>
-          {% endif %}
-          {% if site.enable_darkmode %}
-            <!-- Toogle theme mode -->
-            <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
-                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
-                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
-                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
               </button>
             </li>
           {% endif %}

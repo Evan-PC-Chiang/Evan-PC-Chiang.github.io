@@ -17,6 +17,18 @@ body {
   }
 }
 
+#markdown-content p {
+  /* Add your desired styles here */
+  text-indent: 2rem;
+}
+
+#markdown-content h2::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #ccc; /* Style of the <hr> */
+  margin-top: 0.2rem; /* Spacing between <h2> and <hr> */
+}
+
 body.fixed-top-nav {
   // Add some padding for the nav-bar.
   padding-top: 56px;
